@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.licq</groupId>
+    <artifactId>springcloud-app-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>springcloud-app-parent</name>
+    <url>http://maven.apache.org</url>
+    <packaging>pom</packaging>
+
+
+    <properties>
+          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+          <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+          <java.version>1.8</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--eureka server -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+            </dependency>
+            <!-- spring boot test-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>dev-repository-server</id>-->
+            <!--<name>Dev Release Repo</name>-->
+            <!--<url>http://maven.99zmall.com:8181/nexus/content/repositories/releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>dev-repository-server</id>-->
+            <!--<name>Dev Snapshot Repo</name>-->
+            <!--<url>http://maven.99zmall.com:8181/nexus/content/repositories/snapshots/</url>-->
+        <!--</snapshotRepository>-->
+
+
+    <!--</distributionManagement>-->
+
+    <modules>
+        <module>springcloud-app-eureka-server</module>
+        <module>springcloud-app-eureka-client</module>
+
+    </modules>
+
+    <repositories>
+         <repository>
+             <id>spring-milestones</id>
+             <name>Spring Milestones</name>
+             <url>https://repo.spring.io/milestone</url>
+             <snapshots>
+                 <enabled>false</enabled>
+             </snapshots>
+         </repository>
+     </repositories>
+
+
+
+</project>
