@@ -17,9 +17,13 @@ public class EurekaClientApplication {
     @Value("${server.port}")
     String port;
 
+    @Value("${spring.application.name}")
+    String applicationName;
+
     @RequestMapping("/")
     public String home() {
-      return "hello world from port " + port;
+
+      return String.format("hello world from application [%s] ,port [%s]", applicationName, port) ;
     }
 
 }
