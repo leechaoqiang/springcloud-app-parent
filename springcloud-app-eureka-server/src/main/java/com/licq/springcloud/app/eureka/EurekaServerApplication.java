@@ -1,4 +1,4 @@
-package com.licq.springcloud.app;
+package com.licq.springcloud.app.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

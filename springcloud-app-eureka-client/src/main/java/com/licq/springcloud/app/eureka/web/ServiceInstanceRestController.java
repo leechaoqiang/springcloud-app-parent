@@ -1,4 +1,4 @@
-package com.licq.springcloud.app.web;
+package com.licq.springcloud.app.eureka.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;

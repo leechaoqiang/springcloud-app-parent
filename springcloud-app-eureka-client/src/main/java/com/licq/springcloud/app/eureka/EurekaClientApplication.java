@@ -1,4 +1,4 @@
-package com.licq.springcloud.app;
+package com.licq.springcloud.app.eureka;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;

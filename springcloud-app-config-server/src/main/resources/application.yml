@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/chaoqianglee/springcloud-appconfig
+          searchPaths: springcloud-app-config-server
+
+  application:
+     name: springcloud-app-config-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
