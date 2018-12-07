@@ -1,6 +1,6 @@
 ## springcloud-app-parent
 ### 工程说明
-* springcloud-app-parent只是一个练习SpringCloud的demo工程
+* springcloud-app-parent是一个练习SpringCloud的demo工程
 * Spring Cloud版本号是Finchley.RELEASE
 * Spring Boot的版本号是2.0.5.RELEASE
 ### 模块说明
