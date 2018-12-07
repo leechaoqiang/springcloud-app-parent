@@ -72,6 +72,7 @@
         <module>springcloud-app-eureka-client</module>
         <module>springcloud-app-config-server</module>
         <module>springcloud-app-config-client</module>
+        <module>springcloud-app-ribbon-service</module>
 
     </modules>
 
