@@ -6,7 +6,9 @@ spring:
       server:
         git:
           uri: https://gitee.com/chaoqianglee/springcloud-appconfig
-          searchPaths: springcloud-app-config-server
+          searchPaths: config-center
+#          username:
+#          password:
 
   application:
      name: springcloud-app-config-server

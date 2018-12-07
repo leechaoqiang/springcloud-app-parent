@@ -5,19 +5,13 @@ spring:
     config:
       label: master
       profile: dev
-      uri: http://localhost:8888/
-#      discovery:
-#        enabled: true
-#        serviceId: springcloud-app-config-server
+#      uri: http://localhost:8888/
+      discovery:
+        enabled: true
+        serviceId: springcloud-app-config-server
   application:
           name: springcloud-app-config-client
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-      exposure:
-       include: message
+
 
 #注册到服务中心
 eureka:
