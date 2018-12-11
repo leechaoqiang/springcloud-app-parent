@@ -16,5 +16,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+#       eureka cluster mode
+#      defaultZone: http://peer1:8000/eureka/,http://peer3:8001/eureka/,http://peer3:8002/eureka/
+
 
 

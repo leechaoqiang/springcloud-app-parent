@@ -1,4 +1,4 @@
-package com.licq.springcloud.app.web;
+package com.licq.springcloud.app.config.web;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
