@@ -1,0 +1,11 @@
+
+server:
+    port: 8760
+spring:
+    application:
+        name: springcloud-app-gateway
+    cloud:
+        nacos:
+            discovery:
+                server-addr: http://devops.youhoinfo.com
+                namespace: 1b146843-219b-475e-8acb-b4adae63fd37

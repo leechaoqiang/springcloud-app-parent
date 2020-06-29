@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -20,11 +20,33 @@
 
 
     <properties>
-          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-          <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-          <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <fastjson.version>1.2.68</fastjson.version>
+        <apollo.version>1.5.1</apollo.version>
+        <alibaba-cloud.version>2.1.1.RELEASE</alibaba-cloud.version>
+        <nacos.version>2.1.1.RELEASE</nacos.version>
+        <spring-gateway.version>2.2.0.RELEASE</spring-gateway.version>
+        <mybatis-generator.version>1.4.0</mybatis-generator.version>
+        <pherialize.version>1.2.4</pherialize.version>
+        <jedis.version>3.0.0</jedis.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <httpclient.version>4.5.10</httpclient.version>
+        <druid.version>1.1.20</druid.version>
+        <spring-web.version>5.1.11.RELEASE</spring-web.version>
+        <spring-kafka.version>2.2.11.RELEASE</spring-kafka.version>
+        <dynamic-datasource.version>2.5.4</dynamic-datasource.version>
+        <mybatis.version>2.1.1</mybatis.version>
+        <es.version>7.4.0</es.version>
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <spring-kafka.version>2.2.11.RELEASE</spring-kafka.version>
+        <commons-lang3.version>3.1</commons-lang3.version>
     </properties>
-
+    <dependencyManagement>
         <dependencies>
 
             <dependency>
@@ -34,34 +56,70 @@
             </dependency>
 
 
-            <!-- spring boot test-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-configuration-processor</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    <dependencyManagement>
-        <dependencies>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-configuration-processor</artifactId>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
-
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba-cloud.version}</version>
+                <type>pom</type>
+            </dependency>
+            <!--nacos-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+            </dependency>
+            <!--gateway-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-gateway.version}</version>
+            </dependency>
+            <!--http-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!--http-->
+            <dependency>
+                <groupId>commons-httpclient</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${commons-httpclient.version}</version>
+            </dependency>
+            <!--commons-lang3-->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
 
 
 
@@ -71,37 +129,18 @@
         <module>springcloud-app-config-server</module>
         <module>springcloud-app-config-client</module>
         <module>springcloud-app-ribbon-service</module>
-
+        <module>springcloud-app-gateway</module>
+        <module>springcloud-app-common</module>
+        <module>springcloud-app-api</module>
     </modules>
 
-    <repositories>
-         <repository>
-             <id>spring-milestones</id>
-             <name>Spring Milestones</name>
-             <url>https://repo.spring.io/milestone</url>
-             <snapshots>
-                 <enabled>false</enabled>
-             </snapshots>
-         </repository>
 
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/libs-milestone</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>spring-snapshots</id>
-            <name>Spring Snapshots</name>
-            <url>https://repo.spring.io/libs-snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-     </repositories>
-
-
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
