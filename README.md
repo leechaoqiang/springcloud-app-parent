@@ -14,4 +14,7 @@
 8. springcloud-app-api 网关代理api服务 （使用nacos做注册发现）
 9. springcloud-app-kafka kafka消息生产消费的实践 
 * 9.1 springcloud-app-kafka-producer kafka消息生产
-* 9.2 springcloud-app-kafka-consumer kafka消息消费
+* 9.2 springcloud-app-kafka-consumer kafka消息消费 
+10. springcloud-app-rabbitmq rabbitmq消息生产消费的实践
+* 10.1 springcloud-app-rabbitmq-producer rabbitmq消息生产
+*  rabbitmq消息消费10.2 springcloud-app-rabbitmq-consumer

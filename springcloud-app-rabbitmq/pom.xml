@@ -9,11 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-app-kafka</artifactId>
+    <artifactId>springcloud-app-rabbitmq</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>springcloud-app-kafka-producer</module>
-        <module>springcloud-app-kafka-consumer</module>
+        <module>springcloud-app-rabbitmq-producer</module>
+        <module>springcloud-app-rabbitmq-consumer</module>
     </modules>
 
 </project>

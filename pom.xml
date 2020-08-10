@@ -140,6 +140,7 @@
         <module>springcloud-app-common</module>
         <module>springcloud-app-api</module>
         <module>springcloud-app-kafka</module>
+        <module>springcloud-app-rabbitmq</module>
     </modules>
 
 

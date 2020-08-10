@@ -9,4 +9,4 @@ server:
     port: 8764
 spring:
     application:
-        name: springcloud-app-ribbon-service
+        name: springcloud-app-ribbon-listener
