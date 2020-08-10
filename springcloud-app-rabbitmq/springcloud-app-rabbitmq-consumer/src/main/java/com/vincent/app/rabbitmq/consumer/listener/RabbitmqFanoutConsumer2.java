@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(bindings = @QueueBinding(
-        value = @Queue(value = "${rabbitmq.consumer.queue.name}", durable = "true", autoDelete = "false"),
+        value = @Queue(value = "${rabbitmq.consumer.2.queue.name}", durable = "true", autoDelete = "false"),
         exchange = @Exchange(value = "${rabbitmq.config.exchange}", type = ExchangeTypes.FANOUT))
 )
-public class RabbitmqFanoutConsumer {
+public class RabbitmqFanoutConsumer2 {
 
     /**
      * 设置监听方法
@@ -24,7 +24,7 @@ public class RabbitmqFanoutConsumer {
      */
     @RabbitHandler(isDefault = true)
     public void process(byte[] message) {
-        System.out.println("Fanout-1 Receiver : " + new String(message));
+        System.out.println("Fanout-2 Receiver : " + new String(message));
     }
 
 }
