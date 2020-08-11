@@ -1,17 +1,20 @@
-package com.vincent.springcloud.app.api.controller;
+package com.vincent.springcloud.app.feign.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.vincent.springcloud.app.common.constants.SystemConstants;
+import com.vincent.springcloud.app.feign.client.SpringcloudAppApiClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author vincent.li
  * @Description 测试
- * @since 2020/6/29
+ * @since 2019/6/29
  */
 @RestController
-@RequestMapping(SystemConstants.APP_API)
+@RequestMapping(SystemConstants.APP_FEIGN)
 public class PingController {
 
     @Value("${server.port}")
@@ -29,10 +32,13 @@ public class PingController {
         return jsonObject;
     }
 
+    @Resource
+    private SpringcloudAppApiClient springcloudAppApiClient;
+
     @ResponseBody
-    @GetMapping("/hello")
-    public JSONObject hello(@RequestParam("name") String name){
-        return new JSONObject().fluentPut("hello", name);
+    @GetMapping("/hi/{name}")
+    public String hello(@PathVariable("name") String name){
+        return springcloudAppApiClient.hello(name);
     }
 
 }

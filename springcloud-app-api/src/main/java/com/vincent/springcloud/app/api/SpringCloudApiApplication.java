@@ -9,9 +9,9 @@ import java.util.TimeZone;
 /**
  * @author vincent.li
  * @Description api提供服务
- * @since 2020/6/29
+ * @since 2019/6/29
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.vincent.springcloud.app.api"})
 @EnableDiscoveryClient
 public class SpringCloudApiApplication {
     public static void main(String[] args) {

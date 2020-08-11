@@ -141,6 +141,7 @@
         <module>springcloud-app-api</module>
         <module>springcloud-app-kafka</module>
         <module>springcloud-app-rabbitmq</module>
+        <module>springcloud-app-feign-client</module>
     </modules>
 
 

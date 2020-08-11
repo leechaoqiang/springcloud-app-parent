@@ -11,4 +11,9 @@ public interface SystemConstants {
      * 路由地址前缀
      * */
     String APP_API = "/app/api";
+
+    /**
+     * feign Client路由地址前缀
+     * */
+    String APP_FEIGN = "/app/feign";
 }

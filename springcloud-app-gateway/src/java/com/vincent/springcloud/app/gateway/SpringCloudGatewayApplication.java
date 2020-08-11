@@ -14,7 +14,7 @@ import static com.vincent.springcloud.app.common.constants.SystemConstants.APP_A
 /**
  * @author vincent.li
  * @Description 网关启动类
- * @since 2020/6/29
+ * @since 2019/6/29
  */
 @SpringBootApplication
 @EnableDiscoveryClient

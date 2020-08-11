@@ -15,7 +15,7 @@ public class EurekaClientApplication {
     public static void main(String[] args) {
          SpringApplication.run(EurekaClientApplication.class, args);
     }
-    @Value("${server.port}")
+    @Value("${server.port:8672}")
     String port;
 
     @Value("${spring.application.name}")
