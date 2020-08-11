@@ -17,4 +17,5 @@
 * 9.2 springcloud-app-kafka-consumer kafka消息消费 
 10. springcloud-app-rabbitmq rabbitmq消息生产消费的实践
 * 10.1 springcloud-app-rabbitmq-producer rabbitmq消息生产
-*  rabbitmq消息消费10.2 springcloud-app-rabbitmq-consumer
+* 10.2 springcloud-app-rabbitmq-consumer rabbitmq消息消费
+11. springcloud-app-feign-client feign调用实践（使用nacos做注册发现，和springcloud-app-api配合使用）
