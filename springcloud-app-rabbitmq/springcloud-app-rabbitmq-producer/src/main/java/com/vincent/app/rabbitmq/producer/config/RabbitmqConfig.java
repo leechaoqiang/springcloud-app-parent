@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author vincent.li
  * @Description Rabbitmq配置
- * @since 2020/8/10
+ * @since 2019/8/10
  */
 @Component
 public class RabbitmqConfig {

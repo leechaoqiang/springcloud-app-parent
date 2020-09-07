@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author vincent.li
  * @Description rabbitmq广播模式消费
- * @since 2020/8/9
+ * @since 2019/8/9
  */
 @Component
 @RabbitListener(bindings = @QueueBinding(
