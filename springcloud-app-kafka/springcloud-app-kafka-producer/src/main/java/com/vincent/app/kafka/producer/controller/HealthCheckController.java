@@ -15,7 +15,7 @@ import java.util.Map;
  * </p>
  *
  * @author vincent.li
- * @since 2020-06-09
+ * @since 2019-06-09
  */
 @Slf4j
 @RestController
@@ -31,24 +31,6 @@ public class HealthCheckController {
     /**
      * @api {get} /ping ping一下应用服务
      * @apiDescription  测试应用是否正常运行
-     * @apiVersion 1.0.0
-     * @apiGroup Test
-     *
-     *
-     * @apiSuccess {String} message  消息
-     * @apiSuccess {String} profilesActive  环境
-     * @apiSuccess {String} applicationName  应用名
-     * @apiSuccess {String} serverPort  端口
-     * @apiSuccessExample Success-Response:
-     * {
-     *     "message":"pong!",
-     *     "profilesActive":"dev",
-     *     "applicationName": "membercenter-api",
-     *     "serverPort": 8073
-     * }
-     *
-     *
-     * @apiSampleRequest /ping
      */
     @GetMapping(value = "ping")
     @ResponseBody
