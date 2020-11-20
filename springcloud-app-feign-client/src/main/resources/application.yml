@@ -7,7 +7,7 @@ spring:
     cloud:
         nacos:
             discovery:
-                #换成自己的server-addr地址http://127.0.0.1:8848
-                server-addr: http://devops.youhoinfo.com
+                #换成自己的server-addr地址
+                server-addr: http://127.0.0.1:8848
                 #换成自己的namespace
                 namespace: 1b146843-219b-475e-8acb-b4adae63fd37
