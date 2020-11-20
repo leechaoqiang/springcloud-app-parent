@@ -15,7 +15,7 @@ public class ServiceInstanceRestController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @RequestMapping("/com.licq.springcloud.app.ribbon.service-instances/{applicationName}")
+    @RequestMapping("/com.vincent.springcloud.app.ribbon.service-instances/{applicationName}")
     public List<ServiceInstance> serviceInstancesByApplicationName(
             @PathVariable String applicationName) {
         return this.discoveryClient.getInstances(applicationName);
