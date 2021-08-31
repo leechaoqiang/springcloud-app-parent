@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.licq</groupId>
+    <groupId>com.vincent</groupId>
     <artifactId>springcloud-app-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>springcloud-app-parent</name>
@@ -150,6 +150,7 @@
         <module>springcloud-app-rabbitmq</module>
         <module>springcloud-app-feign-client</module>
         <module>springcloud-app-apollo</module>
+        <module>springcloud-app-docker</module>
     </modules>
 
 
