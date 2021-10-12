@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/chaoqianglee/springcloud-appconfig
-          searchPaths: config-center
+          uri: https://gitee.com/chaoqianglee/springcloud-appconfig/
+          searchPaths: /config-center
 #          username:
 #          password:
 

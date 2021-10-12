@@ -1,24 +1,24 @@
-#spring:
-#    application:
-#        name: springcloud-app-eureka-client
-#        profiles: peer1
-#server:
-#    port: 8762
-#eureka:
-#    client:
-#        serviceUrl:
-#            defaultZone: http://localhost:8761/eureka/
-#            eureka cluster mode
-#            defaultZone: http://peer1:8000/eureka/,http://peer3:8001/eureka/,http://peer3:8002/eureka/
-
-#---
 spring:
     application:
         name: springcloud-app-eureka-client
-        profiles: peer2
+        profiles: peer1
 server:
-    port: 8763
+    port: 8762
 eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8761/eureka/
+#            eureka cluster mode
+#            defaultZone: http://peer1:8000/eureka/,http://peer3:8001/eureka/,http://peer3:8002/eureka/
+
+#---
+#spring:
+#    application:
+#        name: springcloud-app-eureka-client
+#        profiles: peer2
+#server:
+#    port: 8763
+#eureka:
+#    client:
+#        serviceUrl:
+#            defaultZone: http://localhost:8761/eureka/

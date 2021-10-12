@@ -2,6 +2,8 @@
 server:
     port: 8760
 spring:
+    profiles:
+        active: default
     application:
         name: springcloud-app-gateway
     cloud:
@@ -10,4 +12,24 @@ spring:
                 #换成自己的nacos服务地址
                 server-addr: http://127.0.0.1:8848
                 #换成自己的namespace
-                namespace: 1b146843-219b-475e-8acb-b4adae63fd37
+                namespace: be0d62b6-4e0a-46f1-89a2-9d5e0430b361
+
+#gateway动态路由配置
+#        # gateway可以通过开启以下配置来打开根据服务的serviceId来匹配路由,默认是大写
+#        gateway:
+#            discovery:
+#                locator:
+#                    enabled: true
+#            #springcloud-app-api 服务路由
+#            routes[0]:
+#                id: api_route
+#                uri: lb://springcloud-app-api
+#                predicates[0]: Path=/app/api/**
+##                filters[0]: Expect=""
+#            #springcloud-app-feign-client 服务路由
+#            routes[1]:
+#                id: api_route
+#                uri: lb://springcloud-app-feign-client
+#                predicates[0]: Path=/app/feign/**
+##                filters[0]: Expect=""
+

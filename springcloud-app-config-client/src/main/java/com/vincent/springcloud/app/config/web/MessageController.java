@@ -1,8 +1,10 @@
 package com.vincent.springcloud.app.config.web;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,10 +18,20 @@ public class MessageController {
 
     @Value("${info.from}")
     String from;
+    @Value("${info.profile}")
+    String profile;
+
+    @Value("${message}")
+    private String message;
 
     @RequestMapping("/from")
     String from() {
         return this.from;
+    }
+
+    @RequestMapping("/message")
+    public String getMessage() {
+        return this.message;
     }
 
     @RequestMapping("/home")
@@ -28,11 +40,11 @@ public class MessageController {
         return String.format("hello world from application [%s] ,port [%s]", applicationName, port) ;
     }
 
-    @Value("${message}")
-    private String message;
-
-    @RequestMapping("/message")
-    String getMessage() {
-        return this.message;
+    @ResponseBody
+    @RequestMapping("/config")
+    public JSONObject getConfig() {
+        return new JSONObject().fluentPut("message", message)
+            .fluentPut("info.from", from)
+            .fluentPut("{info.profile", profile);
     }
 }

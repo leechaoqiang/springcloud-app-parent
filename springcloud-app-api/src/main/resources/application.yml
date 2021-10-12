@@ -9,5 +9,5 @@ spring:
             discovery:
                 #换成自己的nacos服务地址
                 server-addr: http://127.0.0.1:8848
-                #换成自己的namespace
-                namespace: 1b146843-219b-475e-8acb-b4adae63fd37
+                #换成自己的namespace,也可以不设置，用默认的public
+                namespace: be0d62b6-4e0a-46f1-89a2-9d5e0430b361

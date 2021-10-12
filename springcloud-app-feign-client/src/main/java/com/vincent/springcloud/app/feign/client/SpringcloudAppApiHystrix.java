@@ -1,5 +1,6 @@
 package com.vincent.springcloud.app.feign.client;
 
+import com.vincent.springcloud.app.common.vo.resp.Response;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,7 +11,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringcloudAppApiHystrix implements SpringcloudAppApiClient {
     @Override
-    public String hello(String name) {
-        return "请求超时了,请稍后再试";
+    public Response hello(String name) {
+        return Response.buildSysError();
+    }
+
+    /**
+     * 调用springcloud-app-api服务GET调用的sayHello方法
+     *
+     * @param name
+     * @return
+     */
+    @Override
+    public Response sayHello(String name) {
+        return Response.buildSysError();
     }
 }

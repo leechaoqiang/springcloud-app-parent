@@ -3,6 +3,7 @@ server:
 spring:
   cloud:
     config:
+      name: springcloud-app-config-client
       label: master
       profile: dev
       #use direct link
