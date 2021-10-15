@@ -8,4 +8,8 @@
 * 启动顺序EurekaServerApplication-->ConfigServerApplication-->ConfigClientApplication
 * 浏览器打开链接 http://localhost:8761/可以看到SPRINGCLOUD-APP-CONFIG-SERVER和SPRINGCLOUD-APP-CONFIG-CLIENT服务
 * 浏览器打开http://localhost:8888/springcloud-app-config-client-dev.yml可以查看dev环境下配置文档的内容
-* 浏览器打开http://localhost:8080/message可以测试配置服务中拉取到的配置内容
+* 浏览器打开http://localhost:8080/config可以测试配置服务中拉取到的配置内容
+* 手动刷新配置,执行如下命令,或者用postman等工具执行下面的post请求
+```shell
+curl -X POST http://localhost:8080/actuator/refresh
+```

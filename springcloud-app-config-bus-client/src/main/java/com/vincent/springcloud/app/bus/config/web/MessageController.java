@@ -1,4 +1,4 @@
-package com.vincent.springcloud.app.config.web;
+package com.vincent.springcloud.app.bus.config.web;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RefreshScope
+@RestController
 public class MessageController {
     @Value("${server.port}")
     String port;
@@ -23,16 +23,6 @@ public class MessageController {
 
     @Value("${message}")
     private String message;
-
-    @RequestMapping("/from")
-    String from() {
-        return this.from;
-    }
-
-    @RequestMapping("/message")
-    public String getMessage() {
-        return this.message;
-    }
 
     @RequestMapping("/home")
     public String home() {

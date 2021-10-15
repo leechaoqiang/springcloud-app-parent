@@ -161,6 +161,7 @@
         <module>springcloud-app-apollo</module>
         <module>springcloud-app-docker</module>
         <module>springcloud-app-rocketmq</module>
+        <module>springcloud-app-config-bus-client</module>
     </modules>
 
 

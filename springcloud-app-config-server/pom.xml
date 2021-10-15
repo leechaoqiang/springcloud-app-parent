@@ -35,6 +35,12 @@
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
 
+        <!-- Spring Cloud Bus rabbitmq -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
 
          <!-- spring boot test-->
          <dependency>
