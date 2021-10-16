@@ -6,12 +6,12 @@ import com.ctrip.framework.apollo.spring.annotation.ApolloConfig;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.logging.LogLevel;
 import org.springframework.boot.logging.LoggingSystem;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 import java.util.Set;
 
 /**
@@ -25,7 +25,7 @@ public class LoggerConfig {
     private static final Logger logger = LoggerFactory.getLogger(LoggerConfig.class);
     private static final String LOGGER_TAG = "logging.level.";
 
-    @Autowired
+    @Resource
     private LoggingSystem loggingSystem;
 
     @ApolloConfig

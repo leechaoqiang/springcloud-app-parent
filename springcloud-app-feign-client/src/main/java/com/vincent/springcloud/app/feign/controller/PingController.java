@@ -2,7 +2,9 @@ package com.vincent.springcloud.app.feign.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.vincent.springcloud.app.common.constants.SystemConstants;
+import com.vincent.springcloud.app.common.vo.resp.Response;
 import com.vincent.springcloud.app.feign.client.SpringcloudAppApiClient;
+import com.vincent.springcloud.app.feign.service.HelloService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,12 +35,18 @@ public class PingController {
     }
 
     @Resource
-    private SpringcloudAppApiClient springcloudAppApiClient;
+    private HelloService helloService;
 
     @ResponseBody
     @GetMapping("/hi/{name}")
-    public String hello(@PathVariable("name") String name){
-        return springcloudAppApiClient.hello(name);
+    public Response hi(@PathVariable("name") String name){
+        return helloService.hi(name);
+    }
+
+    @ResponseBody
+    @GetMapping("/say-hi/{name}")
+    public Response sayHi(@PathVariable("name") String name){
+        return helloService.sayHi(name);
     }
 
 }

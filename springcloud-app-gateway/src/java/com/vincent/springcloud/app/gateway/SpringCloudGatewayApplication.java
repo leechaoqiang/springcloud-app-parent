@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.TimeZone;
 
 import static com.vincent.springcloud.app.common.constants.SystemConstants.APP_API;
+import static com.vincent.springcloud.app.common.constants.SystemConstants.APP_FEIGN;
 
 /**
  * @author vincent.li
@@ -25,12 +26,18 @@ public class SpringCloudGatewayApplication {
         System.out.println("(#^.^#)   【SpringCloud-app-gateway】启动成功      (#^.^#)");
     }
 
-
+    /**
+     * 硬编码方式网关路由
+     * @param builder
+     * @return
+     */
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("api_route", p -> p.path(APP_API +"/**").filters(f -> f.removeRequestHeader("Expect"))
                         .uri("lb://springcloud-app-api"))
+                .route("feign_client_route", p -> p.path(APP_FEIGN +"/**").filters(f -> f.removeRequestHeader("Expect"))
+                    .uri("lb://springcloud-app-feign-client"))
                 .build();
     }
 }

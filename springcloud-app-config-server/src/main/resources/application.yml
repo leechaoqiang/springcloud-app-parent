@@ -1,23 +1,42 @@
 server:
   port: 8888
 spring:
+  application:
+    name: springcloud-app-config-server
   cloud:
     config:
       server:
         git:
-          uri: https://gitee.com/chaoqianglee/springcloud-appconfig
-          searchPaths: config-center
+          uri: https://gitee.com/chaoqianglee/springcloud-appconfig/
+          searchPaths: /config-center
 #          username:
 #          password:
 
-  application:
-     name: springcloud-app-config-server
+#spring cloud bus开启
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+#暴露bus刷新api
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  #rabbitmq配置
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+#eureka注册中心
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 #       eureka cluster mode
 #      defaultZone: http://peer1:8000/eureka/,http://peer3:8001/eureka/,http://peer3:8002/eureka/
-
 
 

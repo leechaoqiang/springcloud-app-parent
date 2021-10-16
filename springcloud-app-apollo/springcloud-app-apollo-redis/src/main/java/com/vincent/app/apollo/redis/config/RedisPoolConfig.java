@@ -1,13 +1,10 @@
 package com.vincent.app.apollo.redis.config;
 
 import com.alibaba.fastjson.JSON;
-import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
-import com.ctrip.framework.apollo.spring.annotation.ApolloConfig;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+import javax.annotation.Resource;
 import java.util.Set;
 
 @Configuration
@@ -90,7 +88,7 @@ public class RedisPoolConfig {
     }
 
 
-    @Autowired
+    @Resource
     ApplicationContext context;
 
     /**
