@@ -1,8 +1,11 @@
 server:
     port: 8080
 spring:
+  application:
+    name: springcloud-app-config-client
   cloud:
     config:
+      name: springcloud-app-config-client
       label: master
       profile: dev
       #use direct link
@@ -10,11 +13,14 @@ spring:
       #use eureka register link
       discovery:
         enabled: true
-        serviceId: springcloud-app-config-server
-  application:
-          name: springcloud-app-config-client
+        serviceId: SPRINGCLOUD-APP-CONFIG-SERVER
 
-
+#刷新config配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
 #注册到服务中心
 eureka:
     client:

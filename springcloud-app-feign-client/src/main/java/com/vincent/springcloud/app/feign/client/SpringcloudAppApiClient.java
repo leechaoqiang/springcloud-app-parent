@@ -1,7 +1,9 @@
 package com.vincent.springcloud.app.feign.client;
 
+import com.vincent.springcloud.app.common.vo.resp.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -18,5 +20,13 @@ public interface SpringcloudAppApiClient {
      * @return
      */
     @GetMapping(value = "/app/api/hello")
-    String hello(@RequestParam("name") String name);
+    Response hello(@RequestParam("name") String name);
+
+    /**
+     * 调用springcloud-app-api服务GET调用的sayHello方法
+     * @param name
+     * @return
+     */
+    @GetMapping(value = "/app/api/hello/{name}")
+    Response sayHello(@PathVariable("name") String name);
 }
