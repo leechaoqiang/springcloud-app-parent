@@ -2,6 +2,7 @@ package com.vincent.springcloud.app.seata.order.controller;
 
 import com.vincent.springcloud.app.seata.order.entity.Order;
 import com.vincent.springcloud.app.seata.order.service.OrderService;
+import com.vincent.springcloud.seata.common.model.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("create")
-    public String create(Order order){
+    public Response<Boolean> create(Order order){
         orderServiceImpl.create(order);
-        return "Create order success";
+        return Response.buildSuccess(Boolean.TRUE);
+
     }
 }

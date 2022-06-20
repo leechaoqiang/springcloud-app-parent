@@ -3,11 +3,12 @@ package com.vincent.springcloud.app.seata.order.service.impl;
 import com.alibaba.fastjson.JSON;
 import com.vincent.springcloud.app.seata.order.dao.OrderDao;
 import com.vincent.springcloud.app.seata.order.entity.Order;
+import com.vincent.springcloud.app.seata.order.feign.SeataAccountApi;
+import com.vincent.springcloud.app.seata.order.feign.SeataStorageApi;
 import com.vincent.springcloud.app.seata.order.service.OrderService;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 
 /**
@@ -20,9 +21,9 @@ public class OrderServiceImpl implements OrderService {
     @Resource
     private OrderDao orderDao;
     @Resource
-    private StorageApi storageApi;
+    private SeataStorageApi storageApi;
     @Resource
-    private AccountApi accountApi;
+    private SeataAccountApi accountApi;
 
     /**
      * 创建订单
