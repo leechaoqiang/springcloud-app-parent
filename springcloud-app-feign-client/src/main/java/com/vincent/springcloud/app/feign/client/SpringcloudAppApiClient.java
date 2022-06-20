@@ -1,6 +1,6 @@
 package com.vincent.springcloud.app.feign.client;
 
-import com.vincent.springcloud.app.common.vo.resp.Response;
+import com.vincent.springcloud.seata.common.vo.resp.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

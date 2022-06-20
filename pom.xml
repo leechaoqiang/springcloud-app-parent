@@ -127,6 +127,12 @@
                 <version>${rocketmq-spring-boot-starter.version}</version>
             </dependency>
 
+            <!--druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -162,6 +168,8 @@
         <module>springcloud-app-docker</module>
         <module>springcloud-app-rocketmq</module>
         <module>springcloud-app-config-bus-client</module>
+        <module>springcloud-app-monitor</module>
+        <module>springcloud-app-seata</module>
     </modules>
 
 

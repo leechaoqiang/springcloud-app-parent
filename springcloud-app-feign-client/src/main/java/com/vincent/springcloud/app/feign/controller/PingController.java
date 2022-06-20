@@ -1,9 +1,8 @@
 package com.vincent.springcloud.app.feign.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.vincent.springcloud.app.common.constants.SystemConstants;
-import com.vincent.springcloud.app.common.vo.resp.Response;
-import com.vincent.springcloud.app.feign.client.SpringcloudAppApiClient;
+import com.vincent.springcloud.seata.common.constants.SystemConstants;
+import com.vincent.springcloud.seata.common.vo.resp.Response;
 import com.vincent.springcloud.app.feign.service.HelloService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
