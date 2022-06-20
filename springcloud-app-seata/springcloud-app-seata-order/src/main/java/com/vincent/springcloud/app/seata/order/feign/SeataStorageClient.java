@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author vincent.li
  */
 @FeignClient(value = "${seata.storage.remote.service:springcloud-app-seata-storage}")
-public interface SeataStorageApi {
+public interface SeataStorageClient {
 
     /**
      * 扣减库存

@@ -8,6 +8,10 @@
     <result column="used" property="used" jdbcType="INTEGER" />
     <result column="balance" property="balance" jdbcType="INTEGER" />
   </resultMap>
+  <select id="queryBalance" resultType="java.lang.Integer">
+    select balance from WHERE product_id = #{productId}
+
+  </select>
   <update id="decrease">
     UPDATE storage SET used = used + #{count},balance = balance - #{count} WHERE product_id = #{productId}
   </update>

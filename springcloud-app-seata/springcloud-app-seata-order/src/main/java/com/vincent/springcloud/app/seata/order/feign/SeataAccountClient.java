@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * @author vincent.li
  */
 @FeignClient(value = "${seata.account.remote.service:springcloud-app-seata-account}")
-public interface SeataAccountApi {
+public interface SeataAccountClient {
 
     /**
      * 扣减账户余额

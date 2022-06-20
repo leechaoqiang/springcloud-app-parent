@@ -11,5 +11,5 @@ public interface StorageService {
      * @param count 数量
      * @return
      */
-    void decrease(Long productId, Integer count);
+    boolean decrease(Long productId, Integer count);
 }

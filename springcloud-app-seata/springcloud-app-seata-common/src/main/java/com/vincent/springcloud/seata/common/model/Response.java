@@ -2,6 +2,7 @@ package com.vincent.springcloud.seata.common.model;
 
 import com.vincent.springcloud.seata.common.enums.ResponseCodeEnum;
 import lombok.Data;
+import org.springframework.util.StringUtils;
 
 /**
  * 返回基类
@@ -45,9 +46,21 @@ public class Response<T> {
     }
 
     public static <T> Response<T> buildSuccess(T data) {
-        Response response = new Response();
-        response.setSuccess();
+        Response response = buildSuccess();
         response.setData(data);
+        return response;
+    }
+
+    public static Response buildSuccess(String msg) {
+        Response response = buildSuccess();
+        response.setMessage(msg);
+        return response;
+    }
+
+    public static <T> Response<T> buildSuccess(T data, String msg) {
+        Response response = buildSuccess();
+        response.setData(data);
+        response.setMessage(msg);
         return response;
     }
 
@@ -61,6 +74,10 @@ public class Response<T> {
 
     public static Response buildFailure(ResponseCodeEnum responseCodeEnum) {
         return buildFailure(responseCodeEnum.getCode(), responseCodeEnum.getMsg());
+    }
+
+    public static Response buildFailure(String msg) {
+        return buildFailure(ResponseCodeEnum.FAIL.getCode(), StringUtils.isEmpty(msg) ? ResponseCodeEnum.FAIL.getMsg() : msg);
     }
 
     public static Response buildFailure() {

@@ -24,9 +24,12 @@ public class StorageController {
      * @param count 数量
      * @return
      */
-    @RequestMapping("decrease")
+    @RequestMapping("/decrease")
     public Response<Boolean> decrease(@RequestParam("productId") Long productId,@RequestParam("count") Integer count){
-        storageServiceImpl.decrease(productId,count);
-        return Response.buildSuccess(Boolean.TRUE);
+       boolean isDecSucceed = storageServiceImpl.decrease(productId,count);
+       if (isDecSucceed) {
+           return Response.buildSuccess(Boolean.TRUE, "扣减库存成功");
+       }
+       return Response.buildFailure("扣减库存失败");
     }
 }

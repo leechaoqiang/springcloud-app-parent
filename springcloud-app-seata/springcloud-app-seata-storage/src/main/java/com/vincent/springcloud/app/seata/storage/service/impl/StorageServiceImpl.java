@@ -24,9 +24,19 @@ public class StorageServiceImpl implements StorageService {
      * @return
      */
     @Override
-    public void decrease(Long productId, Integer count) {
-        log.info("productId:{},count:{}------->扣减库存开始", productId, count);
-        storageDao.decrease(productId,count);
-        log.info("------->扣减库存结束");
+    public boolean decrease(Long productId, Integer count) {
+        log.info("decrease#productId:{},count:{}------->扣减库存开始", productId, count);
+        int balance = storageDao.queryBalance(productId);
+        if (count >  balance) {
+            log.info("decrease#productId:{},count:{},balance:{}------->扣减库存失败，库存不足", productId, count, balance);
+            throw new RuntimeException("商品库存不足");
+        }
+        int decFlag = storageDao.decrease(productId,count);
+        if (decFlag <= 0) {
+            log.info("decrease#productId:{},count:{},balance:{}------->扣减库存失败", productId, count, balance);
+            return Boolean.FALSE;
+        }
+        log.info("decrease------->扣减库存结束");
+        return Boolean.TRUE;
     }
 }

@@ -12,5 +12,5 @@ public interface OrderService {
      * @param order
      * @return
      */
-    void create(Order order);
+    void create(Order order) throws Exception;
 }
