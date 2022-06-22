@@ -5,7 +5,7 @@
 
 ### 安装seata-server
 #### 直接部署
-   1. 在[https://github.com/seata/seata/releases](RELEASE)页面下载相应版本并解压
+   1. 在[RELEASE](https://github.com/seata/seata/releases)页面下载相应版本并解压
    2. 直接启动
 * 在 Linux/Mac下执行如下命令
 
@@ -36,7 +36,7 @@ $ sh ./bin/seata-server.sh -p 8091 -h 127.0.0.1 -m file
 
 ## 执行SQL脚本
 
-请分别创建三个数据库，然后执行[./docs/app-seata.sql](app-seata.sql脚本)
+请分别创建三个数据库，然后执行[app-seata.sql脚本](./docs/app-seata.sql)
 
 ## 修改各应用服务的application.yaml配置
 
