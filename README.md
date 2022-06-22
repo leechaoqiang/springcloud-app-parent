@@ -22,7 +22,7 @@
     - 11.1 springcloud-app-docker-java-helloworld docker打包java的helloworld应用实践
 12. springcloud-app-feign-client feign调用实践（使用nacos做注册发现，和springcloud-app-api配合使用）
 13. springcloud-app-seata 分布式事物seata实践   
-    - 具体的实践操作可以参考[./springcloud-app-seata/README.MD](文档说明)
+    - 具体的实践操作可以参考[文档说明](./springcloud-app-seata/README.MD)
 14. springcloud-app-rocketmq rocketmq消息生产消费的实践
     - 14.1 springcloud-app-rocketmq-producer rocketmq消息生产
     - 14.2 springcloud-app-rocketmq-consumer rocketmq消息消费
