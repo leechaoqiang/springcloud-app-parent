@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 /**
  * @author vincent.li
  */
-@FeignClient(value = "${seata.account.remote.service:springcloud-app-seata-account}")
+@FeignClient(value = "${seata.account.remote.service:SPRINGCLOUD-APP-SEATA-ACCOUNT}")
 public interface SeataAccountClient {
 
     /**

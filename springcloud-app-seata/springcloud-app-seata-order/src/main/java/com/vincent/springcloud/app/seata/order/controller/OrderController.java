@@ -5,9 +5,7 @@ import com.vincent.springcloud.app.seata.order.service.OrderService;
 import com.vincent.springcloud.seata.common.enums.ResponseCodeEnum;
 import com.vincent.springcloud.seata.common.model.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -28,8 +26,8 @@ public class OrderController {
      * @param order
      * @return
      */
-    @GetMapping("/create")
-    public Response<Boolean> create(Order order) {
+    @PostMapping("/create")
+    public Response<Boolean> create(@RequestBody Order order) {
         try {
             orderServiceImpl.create(order);
         } catch (Exception e) {

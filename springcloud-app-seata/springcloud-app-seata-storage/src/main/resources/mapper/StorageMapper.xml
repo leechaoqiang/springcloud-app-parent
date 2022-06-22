@@ -9,7 +9,7 @@
     <result column="balance" property="balance" jdbcType="INTEGER" />
   </resultMap>
   <select id="queryBalance" resultType="java.lang.Integer">
-    select balance from WHERE product_id = #{productId}
+    select balance from storage WHERE product_id = #{productId}
 
   </select>
   <update id="decrease">

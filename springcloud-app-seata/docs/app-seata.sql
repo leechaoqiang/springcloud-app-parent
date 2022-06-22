@@ -3,9 +3,9 @@
 CREATE TABLE `account` (
                            `id` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
                            `user_id` bigint(11) DEFAULT NULL COMMENT '用户id',
-                           `total` decimal(10,0) DEFAULT NULL COMMENT '总额度',
-                           `used` decimal(10,0) DEFAULT NULL COMMENT '已用余额',
-                           `balance` decimal(10,0) DEFAULT '0' COMMENT '剩余可用额度',
+                           `total` decimal(10,2) DEFAULT NULL COMMENT '总额度',
+                           `used` decimal(10,2) DEFAULT NULL COMMENT '已用余额',
+                           `balance` decimal(10,2) DEFAULT '0.00' COMMENT '剩余可用额度',
                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -31,6 +31,7 @@ CREATE TABLE `storage` (
                            `balance` int(11) DEFAULT NULL COMMENT '剩余库存',
                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
 CREATE TABLE `undo_log` (
                             `id` bigint(20) NOT NULL AUTO_INCREMENT,
                             `branch_id` bigint(20) NOT NULL,
@@ -49,9 +50,9 @@ CREATE TABLE `order` (
                          `user_id` bigint(11) DEFAULT NULL COMMENT '用户id',
                          `product_id` bigint(11) DEFAULT NULL COMMENT '产品id',
                          `count` int(11) DEFAULT NULL COMMENT '数量',
-                         `money` decimal(11,0) DEFAULT NULL COMMENT '金额',
+                         `money` decimal(11,2) DEFAULT NULL COMMENT '金额',
                          PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `undo_log` (
                             `id` bigint(20) NOT NULL AUTO_INCREMENT,

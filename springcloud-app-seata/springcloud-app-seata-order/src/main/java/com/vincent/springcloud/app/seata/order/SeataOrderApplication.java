@@ -15,7 +15,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @MapperScan("com.vincent.springcloud.app.seata.order.dao")
 @EnableDiscoveryClient
-@EnableFeignClients
+@EnableFeignClients("com.vincent.springcloud.app.seata.order.feign")
 public class SeataOrderApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {

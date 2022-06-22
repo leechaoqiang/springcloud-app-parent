@@ -16,7 +16,7 @@ import javax.annotation.Resource;
  * @author vincent.li
  */
 @Slf4j
-@Service("orderServiceImpl")
+@Service
 public class OrderServiceImpl implements OrderService {
 
     @Resource

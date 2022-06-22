@@ -12,6 +12,6 @@
     UPDATE account SET balance = balance - #{money},used = used + #{money} where user_id = #{userId};
   </update>
   <select id="queryBalanceByUserId" resultType="java.math.BigDecimal" >
-    select balance from account where user_id = #userId}
+    select balance from account where user_id = #{userId}
   </select>
 </mapper>

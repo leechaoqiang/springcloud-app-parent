@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author vincent.li
  */
-@FeignClient(value = "${seata.storage.remote.service:springcloud-app-seata-storage}")
+@FeignClient(value = "${seata.storage.remote.service:SPRINGCLOUD-APP-SEATA-STORAGE}")
 public interface SeataStorageClient {
 
     /**

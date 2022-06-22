@@ -83,7 +83,6 @@
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-all</artifactId>
-            <version>1.3.0</version>
         </dependency>
 
         <dependency>
