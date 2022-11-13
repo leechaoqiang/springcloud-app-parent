@@ -1,4 +1,4 @@
-package com.vincent.springcloud.seata.common.constants;
+package com.vincent.springcloud.common.constants;
 
 /**
  * @author vincent.li

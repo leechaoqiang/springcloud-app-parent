@@ -1,6 +1,6 @@
 package com.vincent.springcloud.app.feign.client;
 
-import com.vincent.springcloud.seata.common.vo.resp.Response;
+import com.vincent.springcloud.common.model.vo.Response;
 import org.springframework.stereotype.Component;
 
 /**

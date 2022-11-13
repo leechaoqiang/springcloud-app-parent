@@ -1,0 +1,4 @@
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  typeAliasesPackage: com.vincent.springcloud.app.entity

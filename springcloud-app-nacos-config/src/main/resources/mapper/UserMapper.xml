@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vincent.springcloud.app.nacos.dao.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.vincent.springcloud.app.nacos.entity.User" >
+        <result column="user_id" property="id" />
+        <result column="user_name" property="userName" />
+        <result column="sex" property="sex" />
+        <result column="password" property="password" />
+        <result column="del_flag" property="delFlag" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        `user_id` as id,
+        user_name,
+        sex,
+        `password`,
+        del_flag,
+        create_by,
+        create_time,
+        update_by,
+        update_time,
+        remark
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.vincent.springcloud.app.nacos.entity.User">
+        INSERT INTO `t_user`
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="null != id ">
+                user_id,
+            </if>
+            <if test="null != userName and '' != userName">
+                user_name,
+            </if>
+            <if test="null != sex and '' != sex">
+                sex,
+            </if>
+            <if test="null != password and '' != password">
+                `password`,
+            </if>
+            <if test="null != delFlag and '' != delFlag">
+                del_flag,
+            </if>
+            <if test="null != createBy and '' != createBy">
+                create_by,
+            </if>
+            <if test="null != createTime and '' != createTime">
+                create_time,
+            </if>
+            <if test="null != updateBy and '' != updateBy">
+                update_by,
+            </if>
+            <if test="null != updateTime and '' != updateTime">
+                update_time,
+            </if>
+            <if test="null != remark and '' != remark">
+                remark
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="null != id ">
+                #{id},
+            </if>
+            <if test="null != userName and '' != userName">
+                #{userName},
+            </if>
+            <if test="null != sex and '' != sex">
+                #{sex},
+            </if>
+            <if test="null != password and '' != password">
+                #{password},
+            </if>
+            <if test="null != delFlag and '' != delFlag">
+                #{delFlag},
+            </if>
+            <if test="null != createBy and '' != createBy">
+                #{createBy},
+            </if>
+            <if test="null != createTime and '' != createTime">
+                #{createTime},
+            </if>
+            <if test="null != updateBy and '' != updateBy">
+                #{updateBy},
+            </if>
+            <if test="null != updateTime and '' != updateTime">
+                #{updateTime},
+            </if>
+            <if test="null != remark and '' != remark">
+                #{remark}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM t_user
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.vincent.springcloud.app.nacos.entity.User">
+        UPDATE `t_user`
+        <set>
+            <if test="null != id ">user_id = #{id},</if>
+            <if test="null != userName and '' != userName">user_name = #{userName},</if>
+            <if test="null != sex and '' != sex">sex = #{sex},</if>
+            <if test="null != password and '' != password">`password` = #{password},</if>
+            <if test="null != delFlag and '' != delFlag">del_flag = #{delFlag},</if>
+            <if test="null != createBy and '' != createBy">create_by = #{createBy},</if>
+            <if test="null != createTime and '' != createTime">create_time = #{createTime},</if>
+            <if test="null != updateBy and '' != updateBy">update_by = #{updateBy},</if>
+            <if test="null != updateTime and '' != updateTime">update_time = #{updateTime},</if>
+            <if test="null != remark and '' != remark">remark = #{remark}</if>
+        </set>
+        WHERE user_id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM t_user
+        WHERE user_id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM `t_user`
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM `t_user`
+    </select>
+
+</mapper>

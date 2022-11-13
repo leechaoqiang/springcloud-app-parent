@@ -1,7 +1,7 @@
 package com.vincent.springcloud.app.feign.service;
 
-import com.vincent.springcloud.seata.common.vo.resp.Response;
 import com.vincent.springcloud.app.feign.client.SpringcloudAppApiClient;
+import com.vincent.springcloud.common.model.vo.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

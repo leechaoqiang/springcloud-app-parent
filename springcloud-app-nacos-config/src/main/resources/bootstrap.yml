@@ -1,0 +1,38 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: ${APP_ID:springcloud-app-nacos-config}
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${NACOS_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:develop}
+      config:
+        server-addr: ${NACOS_ADDR:127.0.0.1:8848}
+        namespace: ${NACOS_NAMESPACE:develop}
+        file-extension: yaml
+        prefix: ${NACOS_CONFIG_PREFIX:${spring.application.name}}
+          # 用于共享的配置文件
+        shared-configs:
+          - data-id: common-mysql.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: common-redis.yaml
+            group: DEFAULT_GROUP
+            refresh: true
+
+          # 常规配置文件
+          # 优先级大于 shared-configs，在 shared-configs 之后加载
+#        extension-configs:
+#            - data-id: nacos-config-advanced.yaml
+#              group: DEFAULT_GROUP
+#              refresh: true
+#            - data-id: nacos-config-base.yaml
+#              group: DEFAULT_GROUP
+#              refresh: true
+
